@@ -36,3 +36,11 @@ class TestLocker(unittest.TestCase):
         self.assertEqual(self.new_account.account_name, "GitHub")
         self.assertEqual(self.new_account.account_user_name, "fuaad001")
         self.assertEqual(self.new_account.account_password, "qwerty123**")
+
+    def test_create_user(self):
+        '''
+        test_create_user test case to test if the user object is saved into
+         the user list
+        '''
+        self.new_user.create_user()
+        self.assertEqual(len(User.user_list),1)
