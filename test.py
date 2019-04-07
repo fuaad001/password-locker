@@ -72,3 +72,13 @@ class TestLocker(unittest.TestCase):
         test_credentials = Credentials("Git", "EmmmaKibore", "eddyyonnie")
         test_credentials.add_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
+
+    def test_delete_credentials(self):
+        '''
+        test_delete_credentials to test if we can remove an account's credentials from our credentials list
+        '''
+        self.new_account.add_credentials()
+        test_credentials = Credentials("Git", "EmmmaKibore", "eddyyonnie")
+        test_credentials.add_credentials()
+        self.new_account.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
