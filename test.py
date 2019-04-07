@@ -94,3 +94,13 @@ class TestLocker(unittest.TestCase):
         searched_account = Credentials.find_by_account("Git")
 
         self.assertEqual(searched_account.account_name, test_credentials.account_name)
+
+    def test_display_all_credentials(self):
+        '''
+        method that returns a list of all credentials saved
+        '''
+        self.assertEqual(Credentials.display_all_accounts(),Credentials.credentials_list)
+
+
+if __name__ == '__main__':
+    unittest.main()
