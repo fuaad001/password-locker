@@ -30,3 +30,11 @@ class Credentials:
         for account in cls.credentials_list:
             if account.account_name == name:
                 Credentials.credentials_list.remove(account)
+
+    @classmethod
+    def display_all_accounts(cls):
+        '''
+        display_all_accounts method returns the credentials list
+        '''
+
+        return cls.credentials_list
