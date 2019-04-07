@@ -38,3 +38,18 @@ class Credentials:
         '''
 
         return cls.credentials_list
+
+    @classmethod
+    def find_by_account(cls, name):
+        '''
+        find_by_account method takes a searched account name and returns account credentials of that account.
+
+        Args:
+            account: Account name to search for
+        Returns :
+            Credentials of the user account that matches the searched account.
+        '''
+
+        for account in cls.credentials_list:
+            if account.account_name == name:
+                return account
