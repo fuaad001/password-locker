@@ -52,3 +52,13 @@ class TestLocker(unittest.TestCase):
         '''
         self.new_account.add_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_create_multiple_users(self):
+        '''
+        test_create_multiple_users to check if we can create multiple user
+        objects to our user list
+        '''
+        self.new_user.create_user()
+        test_user = User("EmmmaKibore", "eddyyonnie")
+        test_user.create_user()
+        self.assertEqual(len(User.user_list),2)
