@@ -44,3 +44,11 @@ class TestLocker(unittest.TestCase):
         '''
         self.new_user.create_user()
         self.assertEqual(len(User.user_list),1)
+
+    def test_add_credentials(self):
+        '''
+        test_add_credentials test case to test if the credentials object is saved into
+         the credentials list
+        '''
+        self.new_account.add_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
