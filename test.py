@@ -82,3 +82,15 @@ class TestLocker(unittest.TestCase):
         test_credentials.add_credentials()
         self.new_account.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_find_by_account(self):
+        '''
+        test_find_credentials_by_account to check if we can find an account's credentials by account name and display information
+        '''
+        self.new_account.add_credentials()
+        test_credentials = Credentials("Git", "EmmmaKibore", "eddyyonnie")
+        test_credentials.add_credentials()
+
+        searched_account = Credentials.find_by_account("Git")
+
+        self.assertEqual(searched_account.account_name, test_credentials.account_name)
