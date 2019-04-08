@@ -80,7 +80,7 @@ class TestLocker(unittest.TestCase):
         self.new_account.add_credentials()
         test_credentials = Credentials("Git", "EmmmaKibore", "eddyyonnie")
         test_credentials.add_credentials()
-        self.new_account.delete_credentials()
+        self.new_account.delete_credentials("Git")
         self.assertEqual(len(Credentials.credentials_list),1)
 
     def test_find_by_account(self):
